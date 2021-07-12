@@ -1,0 +1,44 @@
+// Button btnSize mixin
+@mixin button-size ($padding-x, $padding-y, $font-size, $border-radius) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  border-radius: $border-radius;
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  -ms-border-radius: $border-radius;
+  -o-border-radius: $border-radius;
+}
+
+// lighten为sass内置函数，第一基础色
+@mixin button-style (
+  $background,// 背景色
+  $border, // 边框颜色
+  $color, // 字体颜色
+  $hover-background: lighten($background, 7.5%),
+  $hover-border: lighten($border, 10%),
+  $hover-color: lighten($color, 10%),
+) {
+  background: $background;
+  border-color: $border;
+  color: $color;
+
+  &:hover {
+    background: $hover-background;
+    border-color: $hover-border;
+    color: $hover-color;
+  }
+
+  &:focus,
+  &.focus {
+    border-color: $hover-border;
+    background: $hover-background;
+    color: $hover-color;
+  }
+
+  &:disabled,
+  &.disabled {
+    background: $background;
+    border-color: $border;
+    color: $color;
+  }
+}

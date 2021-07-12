@@ -1,46 +1,60 @@
-# Getting Started with Create React App
+## create-react-app添加eslint校验
+- 创建** .vscode ** 文件夹
+- .vscode 添加 setting.json
+```text
+{
+  "eslintConfig": {
+    "extends": ["react-app", "shared-config"],
+    "rules": {
+      "additional-rule": "warn"
+    },
+    "overrides": [
+      {
+        "files": ["**/*.ts?(x)"],
+        "rules": {
+          "additional-typescript-only-rule": "warn"
+        }
+      }
+    ]
+  }
+}
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 清除原生自带样式
+- normalize.css
 
-## Available Scripts
+## Button组件需求分析
+- 不同的类型
+    - Primary
+    - Default
+    - Danger
+    - Link
+- 不同的size
+    - normal
+    - small
+    - larger
+- Disabled 状态
+    - Button Disabled
+    - link Disabled
 
-In the project directory, you can run:
+- 组件代码设计
+  - 样式设计
+      - 定义不同大小的字体、内边距、字重、状态颜色等属性的变量。
+      - 采用sass的mixin模式去定义button的大小类型和不同状态
+        - button大小考虑的因素：内边距距离、字体大小、按钮圆角
+        - button不同状态考虑的因为： 背景色、边框色、字体色、hover的状态
+  - 组件设计
+    - 定义常量：按钮大小、类型
+    - 约束接收参数
 
-### `yarn start`
+## 组件测试用例
+- 高质量代码
+- 更早发现bug,减少成本
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 测试框架Jest
+- npx jest xx.xx.js
+- npx jest xx.xx.js --watch
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React测试专用工具 
+  - 测试文件格式
+    - .test.js

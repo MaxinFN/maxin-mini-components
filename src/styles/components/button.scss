@@ -1,0 +1,43 @@
+// 按钮样式需求分析
+// size； 用padding来控制
+$border-width:                  1px !default;
+$border-color:                  $gray-300 !default;
+
+$btn-font-weight:               400;
+$btn-padding-y:                 .375rem  !default;
+$btn-padding-x:                 .75rem  !default;
+$btn-font-family:               $font-size-base  !default;
+$btn-font-size:                 $font-size-base  !default;
+$btn-line-height:               $line-height-base  !default;
+
+$btn-box-shadow:                 inset 0 1px 0 rgba($white, .15), 0 1px 1px;
+$btn-disabled-opacity:           0.65  !default;
+
+// 圆角
+$border-radius:                 .25rem  !default;
+$border-radius-lg:              .3rem  !default;
+$border-radius-sm:              .2rem  !default;
+
+// 边距-sm
+$btn-padding-y-sm:              .25rem  !default;
+$btn-padding-x-sm:              .5rem  !default;
+$btn-font-size-sm:              $font-size-sm  !default;
+
+// 编剧-lg
+$btn-padding-y-lg:              .5rem  !default;
+$btn-padding-x-lg:              1rem  !default;
+$btn-font-size-lg:              $font-size-lg  !default;
+
+$btn-border-width:               $border-width  !default;
+
+// link
+$btn-link-color:                 $link-color  !default;
+$btn-link-hover-color:           $link-hover-color  !default;
+$btn-link-disabled-color:        $gray-600  !default;
+
+
+$btn-border-radius:              $border-radius  !default;
+$btn-border-radius-lg:           $border-radius-lg  !default;
+$btn-border-radius-sm:           $border-radius-sm  !default;
+
+$btn-transition:                 color .15s ease-in-out, background-color .15s ease-in-out;
